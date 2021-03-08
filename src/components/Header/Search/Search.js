@@ -16,7 +16,7 @@ export default class Search extends Component {
 
           <SearchIcon id="Search__icon" />
         </div>
-        
+
       </section>
     )
   }
