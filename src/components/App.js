@@ -45,12 +45,21 @@ class App extends Component {
       .then(res => this.setState({ posts: res.data}))
   }
 
+  filterPosts = (input)=> {
+    let filteredPosts = this.state.posts.filter(e => {
+      if(e.text.includes(input)){
+        return e
+      }
+    })
+    this.setState({posts: filteredPosts})
+  }
+
   render() {
     const { posts } = this.state;
 
     return (
       <div className="App__parent">
-        <Header />
+        <Header filterPosts={this.filterPosts}/>
 
         <section className="App__content">
 
